@@ -1,0 +1,152 @@
+/* bowser reset */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 20px;
+}
+
+header {
+  background: tomato;
+}
+
+header h1 {
+  color: white;
+}
+
+#about p {
+  font-size: 14px;
+  color: white;
+  padding: 10px;
+}
+
+#eduction p {
+  font-size: 20;
+  color: green;
+  padding: 10px;
+  font-weight: bold;
+}
+
+nav {
+  padding: 15px 0;
+}
+
+nav nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 20px;
+}
+
+nav li:hover {
+  background: #e69284;
+}
+
+main {
+  background: #e69284;
+}
+
+footer {
+  background: #c7968d;
+  padding: 10px 0;
+}
+
+.btn, .download-btn, .more-btn {
+  background: #f7f783;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 6px 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.more-btn {
+  background: aqua;
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33333%;
+}
+
+.col-5 {
+  width: 41.66667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33333%;
+}
+
+.col-8 {
+  width: 66.66667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/*# sourceMappingURL=demo.css.map */

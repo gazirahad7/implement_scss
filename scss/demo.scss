@@ -1,0 +1,151 @@
+@import "reset";
+@import "variables";
+// how to use each
+// @each $color in red, green, blue{
+//   .#{$color}-text{
+//     color: $color;
+//   }
+// }
+// each with list
+$color: (color1: red, color2: green, color3: blue);
+@each $key, $color in  $color{
+  .#{$color}-text{
+    color: $color;
+  }
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 20px;
+}
+header{
+  h1{
+    color: white;
+  }
+ background: $header-bgcolor;
+}
+// create  mixin 
+@mixin para-style {
+  font-size: 14px;
+  color: white;
+  padding: 10px ;
+  
+}
+// create mixin with parameter
+@mixin para-style-parameter($size, $color, $padding){
+  font-size: $size;
+  color: $color;
+  padding: $padding;
+  font-weight: bold;
+}
+// conditional statment 
+@mixin setFont($value){
+  @if($value == small){
+    font-size: 12px;
+  }@else if($value == medium){
+    font-size: 16px;
+  }@else if($value == large){
+    font-size: 20px;
+  }@else{
+    font-size: none;
+  }
+}
+// use mixin
+#about p{
+  @include para-style;
+}
+// use mixin wiht parameter
+#eduction p{
+  @include para-style-parameter(20,green , 10px  )
+}
+
+nav{
+  padding: 15px 0;
+  nav ul{
+  list-style-type: none;
+}
+ li{
+  display: inline-block;
+  margin: 0 15px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  color: white;
+  transition: 0.4s;
+
+  // use setFont , if els
+  @include setFont(large)
+}
+  li:hover{ 
+  background: $main-bgcolor;
+}
+
+}
+
+main{
+  background: $main-bgcolor;
+  // #about{
+  //   font-size: $para-font;
+  // }
+}
+
+footer{
+  background: $footer-bgcolor;
+  padding: 10px 0;
+}
+
+// How to use  extend and inheritance
+.btn{
+  background: rgb(247, 247, 131);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 6px 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.download-btn{
+  @extend .btn;
+}
+.more-btn{
+  @extend .btn;
+  background: aqua;
+}
+// for and while loop
+[class*="col-"]{
+  float: left;
+}
+// for
+@for $i from 1 through 12{
+  .col-#{$i} {width: 100% / 12 * $i;}
+}
+// while
+// $i: 1;
+// @while  $i < 13 {
+//   .col-#{$i}{
+//     width: 100% / 12 * $i;
+//   }
+//   $i: $i + 1;
+// }
+ 
+// .col-1 {width: 8.33%;}
+// .col-2 {width: 16.66%;}
+// .col-3 {width: 25%;}
+// .col-4 {width: 33.33%;}
+// .col-5 {width: 41.66%;}
+// .col-6 {width: 50%;}
+// .col-7 {width: 58.33%;}
+// .col-8 {width: 66.66%;}
+// .col-9 {width: 75%;}
+// .col-10 {width: 83.33%;}
+// .col-11 {width: 91.66%;}
+// .col-12 {width: 100%;}
+
+.row::after{
+  clear: both;
+  content: "";
+  display: table;
+}
+
+// how to use each
